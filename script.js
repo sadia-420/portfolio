@@ -14,7 +14,7 @@ const revealOnScroll = new IntersectionObserver((entries) => {
 revealElements.forEach(el => revealOnScroll.observe(el));
 
 // Fetch GitHub Repo Count with Base Offset
-fetch('https://api.github.com/users/official-noman')
+fetch('https://api.github.com/users/sadia-420')
     .then(response => response.json())
     .then(data => {
         const repoCount = document.getElementById('dynamic-repo-count');
