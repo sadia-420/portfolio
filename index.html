@@ -16,7 +16,9 @@
         <!-- HERO SECTION -->
         <header>
             <div class="glow-bg"></div>
-            <img src="profile.png" alt="Sadia Hossain Sanjida" class="profile-img">
+            <img src="profile.png" alt="Sadia Hossain Sanjida" class="profile-img"
+                onerror="this.style.display='none'; document.getElementById('profileFallback').style.display='flex';">
+            <div id="profileFallback" class="profile-fallback" style="display:none;">SS</div>
 
             <span class="hero-tag">Hello, I'm Sadia Hossain Sanjida</span>
 
@@ -33,19 +35,82 @@
                 </p>
             </div>
 
-            <!-- Call to Action -->
             <div class="cta-wrapper">
-                <button onclick="openModal('contactModal')" class="btn btn-primary main-cta">
+                <button onclick="openModal('connectModal')" class="btn btn-primary main-cta">
                     <i class="fa-solid fa-paper-plane"></i> Contact Me
                 </button>
 
                 <div class="secondary-actions">
-                    <a href="https://github.com/sadia-420" target="_blank" class="btn btn-outline small-btn">
+                    <a href="https://github.com/sadia-420" target="_blank" rel="noopener"
+                        class="btn btn-outline small-btn">
                         <i class="fa-brands fa-github"></i> GitHub
                     </a>
                 </div>
             </div>
         </header>
+
+        <!-- EVERYTHING ABOUT ME -->
+        <section class="reveal about-hub">
+            <h2>Everything About Me</h2>
+            <p class="section-subtitle">Click any card to explore more about who I am</p>
+
+            <div class="about-bento-grid">
+                <div class="about-card" onclick="openModal('projectsModal')" style="--delay: 0.05s">
+                    <div class="about-card-glow"></div>
+                    <div class="about-card-icon"><i class="fa-solid fa-folder-open"></i></div>
+                    <h3>Projects</h3>
+                    <p id="projectsPreview">Building real-world apps & platforms</p>
+                    <span class="about-card-cta">View Projects <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="about-card" onclick="openModal('futureModal')" style="--delay: 0.1s">
+                    <div class="about-card-glow"></div>
+                    <div class="about-card-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Future Plans</h3>
+                    <p>Software engineering, projects & career goals</p>
+                    <span class="about-card-cta">See Plans <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="about-card" onclick="openModal('awardsModal')" style="--delay: 0.15s">
+                    <div class="about-card-glow"></div>
+                    <div class="about-card-icon"><i class="fa-solid fa-trophy" style="color: #ffd700;"></i></div>
+                    <h3>Achievements & Awards</h3>
+                    <p id="awardsPreview">VC Award & Dean's Honor List awards</p>
+                    <span class="about-card-cta">View Achievements <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="about-card" onclick="openModal('experienceModal')" style="--delay: 0.18s">
+                    <div class="about-card-glow"></div>
+                    <div class="about-card-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3>Experience</h3>
+                    <p id="experiencePreview">Evaluator, ACS Member, Intern & Tutor</p>
+                    <span class="about-card-cta">View Experience <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="about-card" onclick="openModal('hobbiesModal')" style="--delay: 0.20s">
+                    <div class="about-card-glow"></div>
+                    <div class="about-card-icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Hobbies</h3>
+                    <p>Dance, books, art & painting, explore</p>
+                    <span class="about-card-cta">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+
+                <div class="about-card about-card-wide" onclick="openModal('connectModal')" style="--delay: 0.25s">
+                    <div class="about-card-glow"></div>
+                    <div class="about-card-icon"><i class="fa-solid fa-address-book"></i></div>
+                    <h3>Connect With Me</h3>
+                    <p>Email, phone, GitHub & LinkedIn</p>
+                    <div class="connect-preview" id="connectPreview"></div>
+                    <span class="about-card-cta">Get in Touch <i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <!-- <section class="reveal">
+            <h2>Experience</h2>
+            <div class="experience-grid" id="experienceSectionList"></div>
+        </section> -->
 
         <!-- SKILLS SECTION -->
         <section class="reveal">
@@ -64,45 +129,13 @@
         <!-- EDUCATION SECTION -->
         <section class="reveal">
             <h2>Education</h2>
-
-            <!-- Education Card -->
-            <div class="project-card" style="cursor: default; border-left: 4px solid var(--accent-secondary);">
+            <div class="project-card education-card">
                 <div class="card-header">
                     <h3>B.Sc. in Computer Science and Engineering</h3>
                 </div>
-                <p style="margin-bottom: 5px;"><strong>University of Asia Pacific (UAP)</strong></p>
+                <p><strong>University of Asia Pacific (UAP)</strong></p>
             </div>
         </section>
-
-        <!-- PROJECTS SECTION -->
-        <section class="reveal">
-            <h2>Featured Projects</h2>
-
-            <!-- Project 1: Bank Account Management System -->
-            <div class="project-card" style="cursor: default;">
-                <div class="card-header">
-                    <h3><i class="fa-solid fa-building-columns"></i> Bank Account Management System</h3>
-                </div>
-                <p>A secure object-oriented banking application developed using Java for managing accounts, deposits,
-                    withdrawals, and balance tracking.</p>
-                <div class="tech-stack">
-                    <span>Java</span> <span>OOP</span> <span>Data Structures</span>
-                </div>
-            </div>
-
-            <!-- Project 2: Optimized City Energy Grid & Carbon Footprint Tracker -->
-            <div class="project-card" style="cursor: default;">
-                <div class="card-header">
-                    <h3><i class="fa-solid fa-bolt"></i> Optimized City Energy Grid & Carbon Footprint Tracker</h3>
-                </div>
-                <p>A database management system built with SQL to analyze urban energy distribution, optimize power
-                    grids, and monitor carbon footprint metrics efficiently.</p>
-                <div class="tech-stack">
-                    <span>SQL</span> <span>DBMS</span> <span>Relational Database</span>
-                </div>
-            </div>
-        </section>
-
 
         <!-- LEADERSHIP SECTION -->
         <section class="reveal">
@@ -118,11 +151,11 @@
 
     </div>
 
-    <!-- 5. ACTIVITY MODAL -->
+    <!-- LEADERSHIP MODAL -->
     <div class="modal-overlay" id="activityModal">
         <div class="modal-box large-box">
             <span class="close-btn" onclick="closeModal('activityModal')">&times;</span>
-            <h2>🏆 Leadership & Activities</h2>
+            <h2><i class="fa-solid fa-users"></i> Leadership & Activities</h2>
             <div class="modal-content-scroll">
                 <h4>Leadership & Club Roles</h4>
                 <ul>
@@ -133,37 +166,78 @@
         </div>
     </div>
 
-    <!-- 6. CONTACT MODAL (INTERACTIVE) -->
-    <div class="modal-overlay" id="contactModal">
+    <!-- PROJECTS LIST MODAL -->
+    <div class="modal-overlay" id="projectsModal">
         <div class="modal-box large-box">
-            <span class="close-btn" onclick="closeModal('contactModal')">&times;</span>
-            <h2>Let's Build Something Great</h2>
-            <p style="margin-bottom: 20px;">I'm currently open to new opportunities and collaborations. Fill out the
-                form below or reach out directly.</p>
+            <span class="close-btn" onclick="closeModal('projectsModal')">&times;</span>
+            <h2><i class="fa-solid fa-folder-open"></i> My Projects</h2>
+            <p class="modal-lead">Click a project to see details, screenshots, and links.</p>
+            <div class="modal-content-scroll" id="projectsList"></div>
+        </div>
+    </div>
+
+    <!-- PROJECT DETAIL MODAL -->
+    <div class="modal-overlay" id="projectDetailModal">
+        <div class="modal-box large-box project-detail-box">
+            <span class="close-btn" onclick="closeModal('projectDetailModal')">&times;</span>
+            <div id="projectDetailContent"></div>
+        </div>
+    </div>
+
+    <!-- FUTURE PLANS MODAL -->
+    <div class="modal-overlay" id="futureModal">
+        <div class="modal-box large-box">
+            <span class="close-btn" onclick="closeModal('futureModal')">&times;</span>
+            <h2><i class="fa-solid fa-rocket"></i> Future Plans</h2>
+            <div class="modal-content-scroll" id="futurePlansContent"></div>
+        </div>
+    </div>
+
+    <!-- ACHIEVEMENTS & AWARDS MODAL -->
+    <div class="modal-overlay" id="awardsModal">
+        <div class="modal-box large-box">
+            <span class="close-btn" onclick="closeModal('awardsModal')">&times;</span>
+            <h2><i class="fa-solid fa-trophy" style="color: #ffd700;"></i> Achievements & Awards</h2>
+            <p class="modal-lead">Academic distinctions received at University of Asia Pacific.</p>
+            <div class="modal-content-scroll" id="awardsList"></div>
+        </div>
+    </div>
+
+    <!-- AWARD DETAIL MODAL -->
+    <div class="modal-overlay" id="awardDetailModal">
+        <div class="modal-box medium-box">
+            <span class="close-btn" onclick="closeModal('awardDetailModal')">&times;</span>
+            <div id="awardDetailContent"></div>
+        </div>
+    </div>
+
+    <!-- HOBBIES MODAL -->
+    <div class="modal-overlay" id="hobbiesModal">
+        <div class="modal-box large-box">
+            <span class="close-btn" onclick="closeModal('hobbiesModal')">&times;</span>
+            <h2><i class="fa-solid fa-heart"></i> Hobbies & Interests</h2>
+            <div class="modal-content-scroll" id="hobbiesContent"></div>
+        </div>
+    </div>
+
+    <!-- EXPERIENCE MODAL -->
+    <div class="modal-overlay" id="experienceModal">
+        <div class="modal-box large-box">
+            <span class="close-btn" onclick="closeModal('experienceModal')">&times;</span>
+            <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+            <div class="modal-content-scroll" id="experienceModalList"></div>
+        </div>
+    </div>
+
+    <!-- CONNECT MODAL -->
+    <div class="modal-overlay" id="connectModal">
+        <div class="modal-box large-box">
+            <span class="close-btn" onclick="closeModal('connectModal')">&times;</span>
+            <h2><i class="fa-solid fa-address-book"></i> Connect With Me</h2>
+            <p class="modal-lead">Reach out directly — I'm open to opportunities and collaborations.</p>
 
             <div class="contact-modal-grid">
-                <div class="contact-info-side">
-                    <a href="mailto:sadia420hossain@gmail.com" class="contact-item">
-                        <i class="fa-solid fa-envelope contact-icon"></i>
-                        <div>
-                            <strong>Email</strong>
-                            <span>sadia420hossain@gmail.com</span>
-                        </div>
-                    </a>
-                    <a href="tel:+8801775664595" class="contact-item">
-                        <i class="fa-solid fa-phone contact-icon"></i>
-                        <div>
-                            <strong>Phone</strong>
-                            <span>+880 1775-664595</span>
-                        </div>
-                    </a>
-                    <div class="social-links-row" style="margin-top: 20px; display: flex; gap: 15px;">
-                        <a href="https://github.com/sadia-420" target="_blank" class="btn btn-outline small-btn"><i
-                                class="fa-brands fa-github"></i></a>
-                        <a href="https://linkedin.com/in/sadiahossain/" target="_blank"
-                            class="btn btn-outline small-btn"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                </div>
+                <div class="contact-info-side" id="connectInfo"></div>
 
                 <form class="contact-form" onsubmit="handleFormSubmit(event)">
                     <div class="form-group">
@@ -182,6 +256,15 @@
             </div>
         </div>
     </div>
+
+    <!-- Floating Theme Toggle -->
+    <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <footer>
+        <p>&copy; <span id="footerYear"></span> Sadia Hossain Sanjida. Built with passion.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
