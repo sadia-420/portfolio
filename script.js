@@ -22,11 +22,11 @@ const PORTFOLIO_DATA = {
     */
     projects: [
         {
-            id: 'bank-system',
-            title: 'Bank Account Management System',
-            icon: 'fa-solid fa-building-columns',
-            shortDesc: 'Secure object-oriented banking application built with Java.',
-            description: 'A secure object-oriented banking application developed using Java for managing accounts, deposits, withdrawals, and balance tracking.',
+            id: 'finance-tracker',
+            title: 'Personal Finance Tracker',
+            icon: 'fa-solid fa-wallet',
+            shortDesc: 'Secure financial management & budgeting system built with Java.',
+            description: 'A personal finance tracking application developed using Java for managing budgets, income, expenses, and savings efficiently.',
             image: 'assets/projects/bank-system.png',
             github: '',
             liveUrl: '',
@@ -34,14 +34,14 @@ const PORTFOLIO_DATA = {
         },
         {
             id: 'energy-grid',
-            title: 'Optimized City Energy Grid & Carbon Footprint Tracker',
+            title: 'Optimized City Energy Grid and Carbon Footprint Tracker',
             icon: 'fa-solid fa-bolt',
             shortDesc: 'Database system for urban energy analysis and carbon tracking.',
-            description: 'A database management system built with SQL to analyze urban energy distribution, optimize power grids, and monitor carbon footprint metrics efficiently.',
+            description: 'A database management system built with SQL and MySQL to analyze urban energy distribution, optimize power grids, and monitor carbon footprint metrics efficiently.',
             image: 'assets/projects/energy-grid.png',
             github: '',
             liveUrl: '',
-            tech: ['SQL', 'DBMS', 'Relational Database']
+            tech: ['MySQL', 'SQL', 'DBMS', 'Relational Database']
         }
     ],
 
